@@ -1,0 +1,8 @@
+/* You can add your custom css here.*/
+
+#surveyResults{
+    margin: 0 auto;
+    width: 80%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
