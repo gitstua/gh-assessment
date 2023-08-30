@@ -13,13 +13,18 @@ function generateResults(surveyModel) {
         const questionText = question.fullTitle;
         const questionAnswer = question.displayValue;
         const questionComment = question.comment;
-        const questionURL = question.jsonObj.helpURL;
+        const helpURL = question.jsonObj.helpURL;
+        const helpURLTitle = question.jsonObj.helpURLTitle || "More Info";
     
         //add the question text and answer to the results
-        results += `<br/><br/>${questionNumber}. ${questionText}: ${questionAnswer}, ${questionComment}`;
-        if (questionURL)
-            results += `<br/><a href=${questionURL}>More information</a><br/>`;
+        results += `<br/><br/>${questionNumber}. ${questionText}: ${questionAnswer}`;
+        if (questionComment && questionComment.length > 0)
+            results += `, ${questionComment}`;
+        if (helpURL && helpURL.length > 0)
+            results += `<br/><a href=${helpURL}>${helpURLTitle}</a><br/>`;
     }
+
+    surveyModel.jsonObj.completedHtml = results;
 
     //set the results into the div
     document.getElementById('surveyResults').innerHTML = results;
@@ -31,16 +36,10 @@ survey.applyTheme(themeJson);
 survey.onComplete.add((sender, options) => {
     console.log(JSON.stringify(sender.data, null, 3));
 
-    // make button visible using jquery
-    $("#btnSavePdf").show();
+    generateResults(survey);
 });
 survey.data = {
 };
 
-$("#btnSavePdf").hide();
 $("#surveyElement").Survey({ model: survey });
-$("#btnSavePdf").click(function () {
-    $("#surveyElement").hide();
 
-    generateResults(survey);
-});

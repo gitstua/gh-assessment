@@ -1,0 +1,30 @@
+﻿description,title,name,type,showCommentArea,commentText,helpURL,helpURLTitle
+Identity,Do you have more than one Enterprise Admin? ,question1,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users#about-organization-membership-management,About organization membership management
+Identity,Have you setup billing managers? ,question2,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Identity,Are you syncronizing IdP groups which you can link to GitHub Teams?,question3,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Policies - repos,Have you selected the types of repos you want your users to create? Private/internal,question4,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Policies - repos,Do you want forking enabled/disabled for all orgs?,question5,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Policies - repos,Who can change repo visibility between private and internal?,question6,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Policies - repos,Do you allow deletion/transfer of repos  by members or just org owners?,question7,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Policies - repos,Do you allow issues to be deleted by members or just org owners?,question8,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Codspaces,Are you enabling enterprise wide?,question9,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Copilot,Will you block matching public code suggestions for all orgs? ,question10,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Copilot,Will you enable copilot chat in the whole enterprise or set at org level?,question11,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Copilot,Which orgs can enable Copilot? You can select a subset of orgs or the whole enterprise,question12,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Actions,Will you allow self-hosted runners at repo level? ,question13,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Actions,Will you allow Runners against personal EMU namespaces? ,question14,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Code security and analysis,Will you get repo admins enable/disable secret scanning and code scanning?,question15,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Settings - Billing,Have you set a spending limit and enabled alerts at 75/90/100%? ,question16,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Settings - Billing,Have you setup billing emails? ,question17,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Settings - Billing,Have you added an Azure subscription to payment information? ,question18,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Settings - Authentication Security,Do you have your recovery codes from the setup user somewhere very safe? ,question19,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Settings - Authentication Security,Will you automatically redirect users to your sign in page?,question20,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Settings - Authentication Security,Have you enabled the IP allow list for your IdP? (OIDC) or set restrictions (SAML) ,question21,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Code security and analysis,Have you at a minimum enabled push protection? ,question22,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Code security and analysis,Have you enabled Dependabot by default to protect against supply chain attacks?,question23,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Code security and analysis,Do you have a custom push protection URL to show to your users some help text?,question24,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Verified domains,Have you added approved domains so you can make sure alerts don't go to domains you don't want to share with?,question25,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Audit log,Audit Log Stream Enabled to keep over 3 months of logs if you require this? https://github.com/enterprises/stucorp/settings/audit-log/stream ,question26,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Audit log,Source IP Disclosure enabled?        ,question27,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Audit log,Audit Log API Request Events Enabled? ,question28,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Support,Have you set the members who can raise support cases with GitHub? (up to 20) ,question29,boolean,true,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
