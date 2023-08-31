@@ -1,6 +1,6 @@
 ﻿description,title,name,type,titleLocation,showCommentArea,commentText,helpURL,helpURLTitle
 Identity,Do you have more than one Enterprise Admin? ,question1,boolean,Left,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users#about-organization-membership-management,About organization membership management
-Identity,Have you setup billing managers? ,question2,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Identity,Have you setup billing managers? ,question2,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users#about-enterprise-managed-users,About Enterprise Managed Users
 Identity,Are you syncronizing IdP groups which you can link to GitHub Teams?,question3,boolean,Left,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
 Policies - repos,Have you selected the types of repos you want your users to create? Private/internal,question4,boolean,Left,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
 Policies - repos,Do you want forking enabled/disabled for all orgs?,question5,boolean,Left,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example

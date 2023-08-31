@@ -30,8 +30,8 @@ const json = {
     "titleLocation": "top",
     "showCommentArea": "TRUE",
     "commentText": "Comment",
-    "helpURL": "https://docs.github.com/en/enterprise-cloud@latest/",
-    "helpURLTitle": "example"
+    "helpURL": "https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users#about-enterprise-managed-users",
+    "helpURLTitle": "About Enterprise Managed Users"
   },
   {
     "description": "Identity",
