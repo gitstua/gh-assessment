@@ -26,7 +26,7 @@ function generateResults(surveyModel) {
         if (questionComment && questionComment.length > 0)
             questionDetails += `, ${questionComment}`;
         if (helpURL && helpURL.length > 0)
-            questionDetails += `<a href=${helpURL}>${helpURLTitle}</a>`;
+            questionDetails += `<a href=${helpURL} target='_blank'>${helpURLTitle}</a>`;
 
         questionDetails += "</div>";
 
