@@ -23,10 +23,12 @@ const json = {
   "logoPosition": "right",
   "progressBarType": "questions",
   "showProgressBar": "top",
-  "pages": [
+    "title": "GitHub Enterprise EMU Health Assessment",
+    "description": "An unofficial health assessment for GitHub Enterprise",
+"pages": [
    {
     "name": "Page1",
-    "title": "GitHub Enterprise EMU Health Assessment",
+
     "elements": 
 '''
 
