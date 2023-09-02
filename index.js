@@ -18,7 +18,7 @@ function generateResults(surveyModel) {
         const questionComment = question.comment;
         const helpURL = question.jsonObj.helpURL;
         const helpURLTitle = question.jsonObj.helpURLTitle || "More Info";
-    
+
         var questionDetails = "";
 
         //add the question text and answer to the results
@@ -40,51 +40,94 @@ function generateResults(surveyModel) {
     // $("#surveyResults").show();
 }
 
-function calculateScoreText(surveyModel){
+function calculateScoreText(surveyModel) {
     const questions = surveyModel.getAllQuestions();
 
     var score = 0;
-    var maxScore = questions.length +1;
+    var maxScore = questions.length + 1;
     var scoreText = "";
 
     for (let i = 0; i < questions.length; i++) {
         const question = questions[i];
-    
-        if (question.displayValue == "Yes"){
+
+        if (question.displayValue == "Yes") {
             score++;
         }
     }
 
     //calculate percentage of maxScore
-    const scorePercent = Math.round((score/maxScore)*100);
+    const scorePercent = Math.round((score / maxScore) * 100);
 
-    if (scorePercent >= 80){
+    if (scorePercent >= 80) {
         scoreText = "Mature";
-    } else if (scorePercent >= 60){
+    } else if (scorePercent >= 60) {
         scoreText = "Good";
-    } else if (scorePercent >= 40){
+    } else if (scorePercent >= 40) {
         scoreText = "Fair";
     } else {
         scoreText = "Developing";
-    } 
+    }
 
     return `Your rating is <span title='${scorePercent}%'>${scoreText}</span>`;
 }
 
-const survey = new Survey.Model(json);
-// You can delete the line below if you do not use a customized theme
-survey.applyTheme(themeJson);
-survey.onComplete.add((sender, options) => {
-    console.log(JSON.stringify(sender.data, null, 3));
 
-    generateResults(survey);
-});
-survey.data = {
-};
+var survey;
 
-survey.onValidateQuestion.add((survey, options) => {
-    generateResults(survey);
-});
+var json = {
+    "logoPosition": "right",
+    "progressBarType": "questions",
+    "showProgressBar": "top",
+    "title": "GitHub Enterprise EMU Health Assessment",
+    "description": "An unofficial health assessment for GitHub Enterprise",
+    "widthMode": "responsive",
+    "showTOC": true,
+    "tocLocation": "right",
+}
 
-$("#surveyElement").Survey({ model: survey });
+Papa.parse('questions.csv', {
+    download: true,
+    header: true,
+    complete: function (results) {
+        //console.log(results);
+        // questions.data = results.data;
+
+        json.pages = [];
+
+        json.pages.push({
+            "name": "Page1"
+        })
+
+        json.pages[0].elements = [];
+
+        console.log(JSON.stringify(results.data));
+
+        //copy results.data to json.pages.elements
+        for (let i = 0; i < results.data.length; i++) {
+            const question = results.data[i];
+            console.log(question);
+            json.pages[0].elements.push(question);
+        }
+
+        survey = new Survey.Model(json);
+        // You can delete the line below if you do not use a customized theme
+        survey.applyTheme(themeJson);
+
+        survey.onComplete.add((sender, options) => {
+            console.log(JSON.stringify(sender.data, null, 3));
+
+            generateResults(survey);
+        });
+
+        //reset answers
+        survey.data = {
+        };
+
+        survey.onValidateQuestion.add((survey, options) => {
+            generateResults(survey);
+        });
+
+        $("#surveyElement").Survey({ model: survey });
+    }
+})
 
