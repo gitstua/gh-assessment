@@ -1,25 +1,26 @@
 @font-face {
     font-family: 'Mona Sans';
     src:
-      url('Mona-Sans.woff2') format('woff2 supports variations'),
-      url('Mona-Sans.woff2') format('woff2-variations');
+        url('Mona-Sans.woff2') format('woff2 supports variations'),
+        url('Mona-Sans.woff2') format('woff2-variations');
     font-weight: 200 900;
     font-stretch: 75% 125%;
-  }
-  
-  html {
+}
+
+html {
     font-family: 'Mona Sans' !important;
-  }
+    color: azure;
+    background-color: rgb(15, 16, 16);
+}
+
 
 /* sd-completedpage:: before */
-html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-container-modern div.sv-components-column.sv-components-column--expandable.sd-body.sd-completedpage::before
-{
+html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-container-modern div.sv-components-column.sv-components-column--expandable.sd-body.sd-completedpage::before {
     height: 20px;
 }
 
 /* completed page */
-html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-container-modern div.sv-components-column.sv-components-column--expandable.sd-body.sd-completedpage
-{
+html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-container-modern div.sv-components-column.sv-components-column--expandable.sd-body.sd-completedpage {
     color: #d6d6d6;
     text-align: left;
     margin: 0 10px 0 10px;
@@ -30,68 +31,70 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
     width: 90%
 }
 
-.wrong-answer a::before{
+.wrong-answer a::before {
     content: '⚠️';
     margin-right: 5px;
 }
 
-.wrong-answer::after{
+.wrong-answer::after {
     content: '⚠️ Review this topic';
     /* color: red; */
     margin-right: 10px;
-    float:right
+    float: right
 }
 
 
-.question-details{
+.question-details {
     margin: 10px;
     color-scheme: dark;
     /* border-bottom: 1px solid linear-gradient(to right, #8e44ad, #ffffff); */
     border-bottom: 1px solid rgb(72, 22, 81);
 
     margin-bottom: 10px;
-    padding-bottom: 10px;   
+    padding-bottom: 10px;
     margin-left: 10px;
     padding-left: 10px;
 
     display: block;
     float: left;
-    clear: left; 
+    clear: left;
 }
 
-.question-details a{
+.question-details a {
     color: rgb(138, 147, 158);
     display: block;
     margin-left: 0px;
     font-weight: bolder;
 
-}; 
+}
+
+;
 
 .sd-question__header--location--left {
     width: 50% !important;
 }
 
-.score-text{
+.score-text {
     /* margin-left: auto;
     margin-right: auto;
     width: 50%; */
     text-align: center;
     border-bottom: 1px solid rgb(72, 22, 81);
     margin-bottom: 10px;
-    padding-bottom: 10px;    
+    padding-bottom: 10px;
 }
 
-.score-text span{
-    color:rgb(152, 62, 217);
+.score-text span {
+    color: rgb(152, 62, 217);
     font-weight: bolder;
     font-size: larger;
-    
+
     margin-left: auto;
     margin-right: auto;
     width: 50%;
 }
 
-.score-text img{
+.score-text img {
     background-color: gray;
     display: block;
 

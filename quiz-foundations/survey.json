@@ -160,7 +160,6 @@
     "startSurveyText": "Start Quiz",
     "firstPageIsStarted": true,
     "questionsOnPageMode": "questionPerPage",
-    "maxTimeToFinish": 180,
-    "maxTimeToFinishPage": 15,
+    "maxTimeToFinish": 300,
     "showTimerPanel": "top"
    }
