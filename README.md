@@ -25,7 +25,7 @@ For the **quiz** example - this defines more complex question structure directly
 1. Copy an existing folder e.g. emu
 2. Update the title and description
 3. Update the questions.csv
-4. Request the survet by adding the query string `assessment` to load the survey e.g. [stuarteggerton.com/gh-assessment/?assessment=emu](https://stuarteggerton.com/gh-assessment/?assessment=emu)
+4. Request the survey by adding the query string `assessment` to load the survey e.g. [stuarteggerton.com/gh-assessment/?assessment=emu](https://stuarteggerton.com/gh-assessment/?assessment=emu)
 
 ## Todo
 - [ ] Consider local browser storage for the results so that they can be saved as the questions are answered and reloaded.
