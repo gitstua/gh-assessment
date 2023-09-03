@@ -11,7 +11,7 @@ This was built using [github.com/surveyjs/survey-library](https://github.com/sur
 
 Custom attributes was added for `helpURL` and `helpURLTitle` which are used to link to the help page for each question in the results tab.
 
-Scoring is simply based upon how many questions a user enters `yes` to at present. Future versions could have a score column next to each question in the CSV.
+Scoring is based upon if the answer matches the correctAnswer column next to each question in the CSV.
 
 ## To update questions
 1. Edit questions.csv - avoid commas at this stage since this may break things
