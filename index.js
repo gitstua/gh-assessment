@@ -53,7 +53,14 @@ function calculateScoreText(surveyModel) {
     for (let i = 0; i < questions.length; i++) {
         const question = questions[i];
 
-        if (question.displayValue == "Yes") {
+        //if there is a correct answer, then check if it is correct
+        if (question.correctAnswer) {
+            if (question.isAnswerCorrect()) {
+                score++;
+        }
+        }
+        else if (question.getType() == "boolean" && question.value == true) {
+            //if there is not correct answer, then YES is correct for boolean
             score++;
         }
     }
@@ -117,6 +124,8 @@ $.getJSON({
 
                 survey = new Survey.Model(json);
                 survey.applyTheme(themeJson);
+
+                console.log(JSON.stringify(json));
 
                 survey.onComplete.add((sender, options) => {
                     console.log(JSON.stringify(sender.data, null, 3));

@@ -1,2 +1,2 @@
-﻿page,title,description,name,type,titleLocation,showCommentArea,commentText,helpURL,helpURLTitle
-updates,Have you submitted your weekly updates to your manager?,,question1,boolean,top,FALSE,Comment,,
+﻿page,title,description,name,type,titleLocation,showCommentArea,commentText,helpURL,helpURLTitle,correctAnswer
+updates,Have you submitted your weekly updates to your manager?,,question1,boolean,top,FALSE,Comment,,,TRUE
