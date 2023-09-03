@@ -54,20 +54,19 @@
        {
         "type": "radiogroup",
         "name": "question4",
-        "title": "GIT can be described as",
-        "defaultValue": "TOTP",
-        "correctAnswer": "Phone call",
+        "title": "GIT can best be described as..",
+        "correctAnswer": "option1",
         "choices": [
          {
-          "value": "TOTP",
+          "value": "option1",
           "text": "A distributed version control system (DVCS)"
          },
          {
-          "value": "Phone call",
+          "value": "option2",
           "text": "A client server source code system"
          },
          {
-          "value": "SMS",
+          "value": "option3",
           "text": "The best place to store large video files together with your source code"
          }
         ],
@@ -120,7 +119,8 @@
           "value": "Item 4",
           "text": "Magic link to email"
          }
-        ]
+        ],
+        "choicesOrder": "random"
        },
        {
         "type": "checkbox",
@@ -148,7 +148,8 @@
           "value": "Item 4",
           "text": "Secure"
          }
-        ]
+        ],
+        "choicesOrder": "random"
        }
       ]
      }
