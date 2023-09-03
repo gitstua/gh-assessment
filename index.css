@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'Mona Sans';
+    src:
+      url('Mona-Sans.woff2') format('woff2 supports variations'),
+      url('Mona-Sans.woff2') format('woff2-variations');
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+  }
+  
+  html {
+    font-family: 'Mona Sans' !important;
+  }
+
 /* sd-completedpage:: before */
 html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-container-modern div.sv-components-column.sv-components-column--expandable.sd-body.sd-completedpage::before
 {
@@ -10,7 +23,7 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
     color: #d6d6d6;
     text-align: left;
     margin: 0 10px 0 10px;
-    font-family: Open Sans;
+    /* font-family: Open Sans; */
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
