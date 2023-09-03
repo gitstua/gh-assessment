@@ -1,5 +1,5 @@
 # GH Assessment
-A browser only assessment to help you understand if you have considered some key points when configuring GitHub. The questions are based on a [list](https://gist.github.com/gitstua/0bd15c1c6e87e947010906bacc749376) I put together for a customer using GitHub Enterprise Cloud EMU .
+A browser only assessment to help you understand if you have considered some key points when configuring GitHub. The questions are based on a [list](https://gist.github.com/gitstua/0bd15c1c6e87e947010906bacc749376) I put together for a customer using GitHub Enterprise Cloud EMU to consider to improve security and management.
 
 ## How was this built
 This was built using [github.com/surveyjs/survey-library](https://github.com/surveyjs/survey-library) and is a single page application.  The survey is defined in `questions.csv` and the results are processed in `index.js`.
