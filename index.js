@@ -41,7 +41,7 @@ function calculateScoreText(surveyModel) {
     const questions = surveyModel.getAllQuestions();
 
     var score = 0;
-    var maxScore = questions.length + 1;
+    var maxScore = questions.length;
     var scoreText = "";
 
     for (let i = 0; i < questions.length; i++) {

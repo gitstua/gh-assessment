@@ -1,0 +1,12 @@
+{
+    "title": "An assessment of your weekly responsibilities",
+    "description": "How are you doing?",
+    "logoPosition": "right",
+    "progressBarType": "questions",
+    "showProgressBar": "top",
+    "goNextPageAutomatic": true,
+    "widthMode": "responsive",
+    "showTOC": true,
+    "tocLocation": "left",
+    "showPrevButton": true
+}
