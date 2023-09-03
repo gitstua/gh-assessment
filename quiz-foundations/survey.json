@@ -53,6 +53,28 @@
        },
        {
         "type": "radiogroup",
+        "name": "question4",
+        "title": "GIT can be described as",
+        "defaultValue": "TOTP",
+        "correctAnswer": "Phone call",
+        "choices": [
+         {
+          "value": "TOTP",
+          "text": "A distributed version control system (DVCS)"
+         },
+         {
+          "value": "Phone call",
+          "text": "A client server source code system"
+         },
+         {
+          "value": "SMS",
+          "text": "The best place to store large video files together with your source code"
+         }
+        ],
+        "choicesOrder": "random"
+       },
+       {
+        "type": "radiogroup",
         "name": "question1",
         "title": "Replicating users from your identity provider is made possible by...",
         "correctAnswer": "Item 1",
@@ -98,8 +120,7 @@
           "value": "Item 4",
           "text": "Magic link to email"
          }
-        ],
-        "choicesOrder": "random"
+        ]
        },
        {
         "type": "checkbox",
@@ -127,8 +148,7 @@
           "value": "Item 4",
           "text": "Secure"
          }
-        ],
-        "choicesOrder": "random"
+        ]
        }
       ]
      }
