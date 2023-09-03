@@ -98,7 +98,8 @@
           "value": "Item 4",
           "text": "Magic link to email"
          }
-        ]
+        ],
+        "choicesOrder": "random"
        },
        {
         "type": "checkbox",
@@ -126,7 +127,8 @@
           "value": "Item 4",
           "text": "Secure"
          }
-        ]
+        ],
+        "choicesOrder": "random"
        }
       ]
      }
