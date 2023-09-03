@@ -37,6 +37,12 @@ function generateResultsHTML(surveyModel) {
 
 }
 
+function resetSurvey(surveyModel) {
+    if (confirm('This will reset the survey and you will lose all answers. Are you sure?')){
+        location.reload();
+    }
+}
+
 function calculateScoreText(surveyModel) {
     const questions = surveyModel.getAllQuestions();
 
@@ -114,6 +120,7 @@ $.getJSON({
 
                 survey.onComplete.add((sender, options) => {
                     console.log(JSON.stringify(sender.data, null, 3));
+                    $("#btnReset").show();
                 });
 
                 //reset answers
