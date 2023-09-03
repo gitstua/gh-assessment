@@ -11,7 +11,7 @@ const themeJson =
       "--sjs-general-dim-forecolor": "rgba(255, 255, 255, 0.79)",
       "--sjs-general-dim-forecolor-light": "rgba(125, 130, 148, 1)",
       "--sjs-primary-backcolor": "#8134FF",
-      "--sjs-primary-backcolor-light": "rgba(129, 52, 255, 0.1)",
+      "--sjs-primary-backcolor-light": "rgba(129, 52, 255, 0.6)",
       "--sjs-primary-backcolor-dark": "rgba(133, 54, 263, 1)",
       "--sjs-primary-forecolor": "rgba(32, 32, 32, 1)",
       "--sjs-primary-forecolor-light": "rgba(32, 32, 32, 0.25)",

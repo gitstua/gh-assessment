@@ -35,9 +35,6 @@ function generateResults(surveyModel) {
 
     surveyModel.completedHtml = results;
 
-    //set the results into the div
-    // document.getElementById('surveyResults').innerHTML = results;
-    // $("#surveyResults").show();
 }
 
 function calculateScoreText(surveyModel) {
