@@ -17,16 +17,29 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
     width: 90%
 }
 
+.wrong-answer a::before{
+    content: '⚠️';
+    margin-right: 5px;
+}
+
+.wrong-answer::after{
+    content: '⚠️ Review this topic';
+    /* color: red; */
+    margin-right: 10px;
+    float:right
+}
+
+
 .question-details{
     margin: 10px;
-    border: 0;
     color-scheme: dark;
     /* border-bottom: 1px solid linear-gradient(to right, #8e44ad, #ffffff); */
     border-bottom: 1px solid rgb(72, 22, 81);
 
-    
     margin-bottom: 10px;
-    padding-bottom: 10px;    
+    padding-bottom: 10px;   
+    margin-left: 10px;
+    padding-left: 10px;
 
     display: block;
     float: left;
@@ -36,7 +49,9 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
 .question-details a{
     color: rgb(138, 147, 158);
     display: block;
-    margin-left: 20px;
+    margin-left: 0px;
+    font-weight: bolder;
+
 }; 
 
 .sd-question__header--location--left {

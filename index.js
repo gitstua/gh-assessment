@@ -21,8 +21,10 @@ function generateResultsHTML(surveyModel) {
 
         var questionDetails = "";
 
+        const questionClass = question.isAnswerCorrect() ? "correct-answer" : "wrong-answer";
+        
         //add the question text and answer to the results
-        questionDetails += `<div class='question-details'>${questionNumber}. ${questionText}: ${questionAnswer}`;
+        questionDetails += `<div class='question-details ${questionClass}'>${questionNumber}. ${questionText}: ${questionAnswer}`;
         if (questionComment && questionComment.length > 0)
             questionDetails += `, ${questionComment}`;
         if (helpURL && helpURL.length > 0)
@@ -47,20 +49,15 @@ function calculateScoreText(surveyModel) {
     const questions = surveyModel.getAllQuestions();
 
     var score = 0;
-    var maxScore = questions.length;
+    //because some questions do not have an answer, we need to calculate the max score 
+    var maxScore = surveyModel.getCorrectAnswerCount() + surveyModel.getInCorrectAnswerCount(); 
     var scoreText = "";
 
     for (let i = 0; i < questions.length; i++) {
         const question = questions[i];
 
         //if there is a correct answer, then check if it is correct
-        if (question.correctAnswer) {
-            if (question.isAnswerCorrect()) {
-                score++;
-        }
-        }
-        else if (question.getType() == "boolean" && question.value == true) {
-            //if there is not correct answer, then YES is correct for boolean
+        if (question.isAnswerCorrect()) {
             score++;
         }
     }
