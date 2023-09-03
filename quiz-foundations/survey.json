@@ -19,7 +19,7 @@
        {
         "type": "html",
         "name": "welcomeMsg",
-        "html": "<b>Take this quiz to find out how well you the foundations of GitHub.</b></br></br><i>Good luck!</i></br><img src=' https://octodex.github.com/images/hula_loop_octodex03.gif' width='60%' height='auto' style='border-radius: 25px;'></img>\n"
+        "html": "<b>Take this quiz to find out how well you know the foundations of GitHub.</b></br></br><i>Good luck!</i></br><img src=' https://octodex.github.com/images/hula_loop_octodex03.gif' width='60%' height='auto' style='border-radius: 25px;'></img>\n"
        }
       ]
      },
