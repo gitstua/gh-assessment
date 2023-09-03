@@ -1,7 +1,7 @@
 const themeJson = 
 {
   "cssVariables": {
-      "--sjs-general-backcolor": "rgba(53, 55, 63, 1)",
+      "--sjs-general-backcolor": "#00000A",
       "--sjs-general-backcolor-dark": "rgba(60, 63, 74, 1)",
       "--sjs-general-backcolor-dim": "#000000",
       "--sjs-general-backcolor-dim-light": "rgba(46, 48, 55, 1)",
