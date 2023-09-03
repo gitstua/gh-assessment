@@ -55,17 +55,23 @@ function calculateScoreText(surveyModel) {
     //calculate percentage of maxScore
     const scorePercent = Math.round((score / maxScore) * 100);
 
+    var scoreImg = "";
+
     if (scorePercent >= 80) {
         scoreText = "Mature";
+        scoreImg = "score-green.png";
     } else if (scorePercent >= 60) {
         scoreText = "Good";
+        scoreImg = "score-yellow.png";
     } else if (scorePercent >= 40) {
         scoreText = "Fair";
+        scoreImg = "score-red.png";
     } else {
         scoreText = "Developing";
+        scoreImg = "score-red.png";
     }
 
-    return `Your rating is <span title='${scorePercent}%'>${scoreText}</span>`;
+    return `<img src='${scoreImg}' alt="${scorePercent}%"/> Your rating is <span title='${scorePercent}%'>${scoreText}</span>`;
 }
 
 
@@ -117,7 +123,6 @@ Papa.parse('questions.csv', {
             console.log(JSON.stringify(sender.data, null, 3));
 
           //  generateResults(survey);
-          document.querySelector("#clearBtn").style.display = 'inline-block';
         });
 
         //reset answers

@@ -43,8 +43,27 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
     width: 50% !important;
 }
 
+.score-text{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-bottom: 1px solid rgb(72, 22, 81);
+    margin-bottom: 10px;
+    padding-bottom: 10px;    
+}
+
 .score-text span{
     color:rgb(152, 62, 217);
     font-weight: bolder;
     font-size: larger;
+}
+
+.score-text img{
+    background-color: gray;
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
 }
