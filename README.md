@@ -3,8 +3,10 @@ A browser only assessment to help you understand if you have considered some key
 
 This is not an official GitHub assessment and is not endorsed by GitHub.
 
-## Live demo
-You can see a live demo on my website [stuarteggerton.com/gh-assessment](https://stuarteggerton.com/gh-assessment/)
+## Live demos
+- A live demo of the GitHub Enterprise Cloud EMU assessment is available at [stuarteggerton.com/gh-assessment](https://stuarteggerton.com/gh-assessment)
+- A quiz for foundational knowledge about GitHub is available at [stuarteggerton.com/gh-assessment/?assessment=quiz-foundations](https://stuarteggerton.com/gh-assessment/?assessment=quiz-foundations)
+
 
 ## How was this built
 This was built using [github.com/surveyjs/survey-library](https://github.com/surveyjs/survey-library) and is a single page application.  The survey is defined in `questions.csv` and the results are processed in `index.js`.
