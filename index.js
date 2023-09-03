@@ -98,50 +98,62 @@ $.getJSON({
     success: function (result) {
         json = result;
 
-        Papa.parse(assessmentName + '/questions.csv', {
-            download: true,
-            header: true,
-            complete: function (results) {
-                json.pages = [];
-                var page = [];
+        if (json.pages){
+            setupSurveyFromJson(json);
+        }
+        else{
 
-                for (let i = 0; i < results.data.length; i++) {
-                    const question = results.data[i];
-                    console.log(question);
+            Papa.parse(assessmentName + '/questions.csv', {
+                download: true,
+                header: true,
+                complete: function (results) {
+                    json.pages = [];
+                    var page = [];
 
-                    if (question.page != page.name) {
-                        page = [];
-                        page.name = question.page;
-                        page.elements = [];
-                        json.pages.push(page);
+                    for (let i = 0; i < results.data.length; i++) {
+                        const question = results.data[i];
+                        console.log(question);
+
+                        if (question.page != page.name) {
+                            page = [];
+                            page.name = question.page;
+                            page.elements = [];
+                            json.pages.push(page);
+                        }
+
+                        page.elements.push(question);
                     }
 
-                    page.elements.push(question);
+                    setupSurveyFromJson(json);
                 }
-
-                survey = new Survey.Model(json);
-                survey.applyTheme(themeJson);
-
-                console.log(JSON.stringify(json));
-
-                survey.onComplete.add((sender, options) => {
-                    console.log(JSON.stringify(sender.data, null, 3));
-                    $("#btnReset").show();
-                });
-
-                //reset answers
-                survey.data = {
-                };
-
-                survey.onValidateQuestion.add((survey, options) => {
-                    generateResultsHTML(survey);
-                });
-
-                $("#surveyElement").Survey({ model: survey });
             }
+            );
+
         }
-        );
     }
 });
 
+
+function setupSurveyFromJson(json) {
+    survey = new Survey.Model(json);
+    survey.applyTheme(themeJson);
+
+    console.log(JSON.stringify(json));
+
+    survey.onComplete.add((sender, options) => {
+        console.log(JSON.stringify(sender.data, null, 3));
+        $("#btnReset").show();
+    });
+
+    //reset answers
+    survey.data = {};
+
+    survey.onValidateQuestion.add((survey, options) => {
+        if (!survey.completedHtml){
+            generateResultsHTML(survey);
+        }
+    });
+
+    $("#surveyElement").Survey({ model: survey });
+}
 
