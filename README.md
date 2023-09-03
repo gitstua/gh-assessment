@@ -15,6 +15,8 @@ Custom attributes was added for `helpURL` and `helpURLTitle` which are used to l
 
 Scoring is based upon if the answer matches the correctAnswer column next to each question in the CSV.
 
+For the **quiz** example - this defines more complex question structure directly in the `survey.json` file.
+
 ## To update questions
 1. Edit questions.csv - avoid commas at this stage since this may break things
 2. Test locally
