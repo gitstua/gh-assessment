@@ -98,8 +98,35 @@
           "value": "Item 4",
           "text": "Magic link to email"
          }
+        ]
+       },
+       {
+        "type": "checkbox",
+        "name": "question3",
+        "title": "A repository can have these visibilities. (Choose 3)",
+        "correctAnswer": [
+         "Item 1",
+         "Item 2",
+         "Item 3"
         ],
-        "choicesOrder": "random"
+        "choices": [
+         {
+          "value": "Item 1",
+          "text": "Public"
+         },
+         {
+          "value": "Item 2",
+          "text": "Private"
+         },
+         {
+          "value": "Item 3",
+          "text": "Internal"
+         },
+         {
+          "value": "Item 4",
+          "text": "Secure"
+         }
+        ]
        }
       ]
      }
@@ -110,7 +137,7 @@
     "startSurveyText": "Start Quiz",
     "firstPageIsStarted": true,
     "questionsOnPageMode": "questionPerPage",
-    "maxTimeToFinish": 240,
-    "maxTimeToFinishPage": 30,
+    "maxTimeToFinish": 180,
+    "maxTimeToFinishPage": 15,
     "showTimerPanel": "top"
    }
