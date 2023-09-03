@@ -3,4 +3,4 @@ food,did you buy food?,,question1,boolean,top,FALSE,Comment,,,TRUE
 food,have you got a water bowl?,,question2,boolean,top,FALSE,Comment,,,TRUE
 equipment,Do you have a dog bed?,,question3,boolean,top,FALSE,Comment,,,TRUE
 equipment,Have you got a collar?,,question4,boolean,top,FALSE,Comment,,,TRUE
-equipment,Have you built a new 5 bedroom house for the dog?,,question5,boolean,top,FALSE,Comment,,,FALSE
+equipment,Have you bought a new 5 bedroom house for the dog?,,question5,boolean,top,FALSE,Comment,https://luxe.digital/lifestyle/home/most-expensive-houses/,,FALSE
