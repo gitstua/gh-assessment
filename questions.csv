@@ -7,10 +7,10 @@ Policies - repos,Do you want forking enabled/disabled for all orgs?,,question5,b
 Policies - repos,Who can change repo visibility between private and internal?,,question6,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
 Policies - repos,Do you allow deletion/transfer of repos  by members or just org owners?,,question7,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
 Policies - repos,Do you allow issues to be deleted by members or just org owners?,,question8,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
-Codspaces,Are you enabling enterprise wide?,,question9,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
-Copilot,Will you block matching public code suggestions for all orgs? ,,question10,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
-Copilot,Will you enable copilot chat in the whole enterprise or set at org level?,,question11,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
-Copilot,Which orgs can enable Copilot? You can select a subset of orgs or the whole enterprise,,question12,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+Codespaces,Are you enabling Codespaces enterprise wide?,,question9,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+GitHub Copilot for Business,Will you block matching public code suggestions for all orgs? ,,question10,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+GitHub Copilot for Business,Will you enable copilot chat in the whole enterprise or set at org level?,,question11,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
+GitHub Copilot for Business,Which orgs can enable Copilot? You can select a subset of orgs or the whole enterprise,,question12,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
 Actions,Will you allow self-hosted runners at repo level? ,,question13,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
 Actions,Will you allow Runners against personal EMU namespaces? ,,question14,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
 Code security and analysis,Will you get repo admins enable/disable secret scanning and code scanning?,,question15,boolean,top,TRUE,Comment,https://docs.github.com/en/enterprise-cloud@latest/,example
