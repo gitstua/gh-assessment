@@ -82,7 +82,8 @@ var json = {
     "description": "An unofficial health assessment for GitHub Enterprise",
     "widthMode": "responsive",
     "showTOC": true,
-    "tocLocation": "right",
+    "tocLocation": "left",
+    showPrevButton: true,
 }
 
 Papa.parse('questions.csv', {
@@ -94,29 +95,32 @@ Papa.parse('questions.csv', {
 
         json.pages = [];
 
-        json.pages.push({
-            "name": "Page1"
-        })
+        //TODO: sort by page
 
-        json.pages[0].elements = [];
+        var page = [];
 
-        console.log(JSON.stringify(results.data));
-
-        //copy results.data to json.pages.elements
         for (let i = 0; i < results.data.length; i++) {
             const question = results.data[i];
             console.log(question);
-            json.pages[0].elements.push(question);
+
+            if (question.page != page.name) {
+                page = [];
+                page.name = question.page;
+                page.elements = [];
+                json.pages.push(page);
+            }
+
+            page.elements.push(question);
         }
 
         survey = new Survey.Model(json);
-        // You can delete the line below if you do not use a customized theme
         survey.applyTheme(themeJson);
 
         survey.onComplete.add((sender, options) => {
             console.log(JSON.stringify(sender.data, null, 3));
 
-            generateResults(survey);
+          //  generateResults(survey);
+          document.querySelector("#clearBtn").style.display = 'inline-block';
         });
 
         //reset answers
@@ -130,4 +134,3 @@ Papa.parse('questions.csv', {
         $("#surveyElement").Survey({ model: survey });
     }
 })
-
