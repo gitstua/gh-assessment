@@ -6,7 +6,7 @@ These are not an official GitHub assessments and is not endorsed by GitHub.
 ## Live demos
 
 ### EMU Assessment
-- A live demo of the GitHub Enterprise Cloud EMU assessment is available at [stuarteggerton.com/gh-assessment](https://stuarteggerton.com/gh-assessment)  - helps you understand if you have considered some key points when configuring GitHub.
+A live demo of the GitHub Enterprise Cloud EMU assessment is available at [stuarteggerton.com/gh-assessment](https://stuarteggerton.com/gh-assessment)  - helps you understand if you have considered some key points when configuring GitHub.
   
 The questions for the EMU survey are based on a [list](https://gist.github.com/gitstua/0bd15c1c6e87e947010906bacc749376) I put together for a customer using GitHub Enterprise Cloud EMU to consider to improve security and management.
 
