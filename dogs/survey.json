@@ -1,0 +1,12 @@
+{
+    "title": "An example survey about dogs",
+    "description": "An example of a survey about dogs.",
+    "logoPosition": "right",
+    "progressBarType": "questions",
+    "showProgressBar": "top",
+    "goNextPageAutomatic": true,
+    "widthMode": "responsive",
+    "showTOC": true,
+    "tocLocation": "left",
+    "showPrevButton": true
+}

@@ -1,4 +1,4 @@
-function generateResults(surveyModel) {
+function generateResultsHTML(surveyModel) {
     // get the data from survey
     // const results = JSON.stringify(surveyModel.data);
 
@@ -74,65 +74,61 @@ function calculateScoreText(surveyModel) {
     return `<img src='${scoreImg}' alt="${scorePercent}%"/> Your rating is <span title='${scorePercent}%'>${scoreText}</span>`;
 }
 
-
 var survey;
 
-var json = {
-    "logoPosition": "right",
-    "progressBarType": "questions",
-    "showProgressBar": "top",
-    "title": "GitHub Enterprise EMU Health Assessment",
-    "description": "An unofficial health assessment for GitHub Enterprise",
-    "widthMode": "responsive",
-    "showTOC": true,
-    "tocLocation": "left",
-    showPrevButton: true,
-}
+// read querystring param assessment
+const urlParams = new URLSearchParams(window.location.search);
+var assessmentName = urlParams.get('assessment');
+assessmentName = assessmentName || "emu"; //default to emu
 
-Papa.parse('questions.csv', {
-    download: true,
-    header: true,
-    complete: function (results) {
-        //console.log(results);
-        // questions.data = results.data;
+var json = {};
 
-        json.pages = [];
+$.getJSON({
+    url: assessmentName + "/survey.json",
+    success: function (result) {
+        json = result;
 
-        //TODO: sort by page
+        Papa.parse(assessmentName + '/questions.csv', {
+            download: true,
+            header: true,
+            complete: function (results) {
+                json.pages = [];
+                var page = [];
 
-        var page = [];
+                for (let i = 0; i < results.data.length; i++) {
+                    const question = results.data[i];
+                    console.log(question);
 
-        for (let i = 0; i < results.data.length; i++) {
-            const question = results.data[i];
-            console.log(question);
+                    if (question.page != page.name) {
+                        page = [];
+                        page.name = question.page;
+                        page.elements = [];
+                        json.pages.push(page);
+                    }
 
-            if (question.page != page.name) {
-                page = [];
-                page.name = question.page;
-                page.elements = [];
-                json.pages.push(page);
+                    page.elements.push(question);
+                }
+
+                survey = new Survey.Model(json);
+                survey.applyTheme(themeJson);
+
+                survey.onComplete.add((sender, options) => {
+                    console.log(JSON.stringify(sender.data, null, 3));
+                });
+
+                //reset answers
+                survey.data = {
+                };
+
+                survey.onValidateQuestion.add((survey, options) => {
+                    generateResultsHTML(survey);
+                });
+
+                $("#surveyElement").Survey({ model: survey });
             }
-
-            page.elements.push(question);
         }
-
-        survey = new Survey.Model(json);
-        survey.applyTheme(themeJson);
-
-        survey.onComplete.add((sender, options) => {
-            console.log(JSON.stringify(sender.data, null, 3));
-
-          //  generateResults(survey);
-        });
-
-        //reset answers
-        survey.data = {
-        };
-
-        survey.onValidateQuestion.add((survey, options) => {
-            generateResults(survey);
-        });
-
-        $("#surveyElement").Survey({ model: survey });
+        );
     }
-})
+});
+
+
