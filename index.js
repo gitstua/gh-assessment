@@ -98,7 +98,8 @@ $.getJSON({
     success: function (result) {
         json = result;
 
-        if (json.pages){
+//  check if pages are defined in the json and have more than 0
+        if (json.pages && json.pages.length > 0){
             setupSurveyFromJson(json);
         }
         else{
@@ -149,7 +150,7 @@ function setupSurveyFromJson(json) {
     survey.data = {};
 
     survey.onValidateQuestion.add((survey, options) => {
-        if (!survey.completedHtml){
+        if (survey.completedHtmlOnCondition.length == 0){
             generateResultsHTML(survey);
         }
     });
