@@ -1,20 +1,64 @@
+var survey;
+var json = {};
+var chartData = {};
+
 function generateResultsHTML(surveyModel) {
-    // get the data from survey
-    // const results = JSON.stringify(surveyModel.data);
-
-
-
     var results = "";
-    //get all questions
-    const questions = surveyModel.getAllQuestions();
 
     //add score text
     results = `<div class='score-text'>${calculateScoreText(surveyModel)}</div>`;
+
+    results += `<div class="chart-container"><canvas id="myChart" width="100%" height="100%"></canvas></div>`;
+
+    chartData = {
+        labels: [],
+        datasets: [
+            {
+                label: "Your results (closer to the edge is better)",
+                backgroundColor: "rgba(179,181,198,0.2)",
+                borderColor: "rgba(179,181,198,1)",
+                pointBackgroundColor: "rgba(179,181,198,1)",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgba(179,181,198,1)",
+                data: []
+            }
+        ]
+    };;
 
     //loop through pages and get the questions
     for (let i = 0; i < surveyModel.pages.length; i++) {
         const page = surveyModel.pages[i];
         results += `<div class='page-details'><h3>${page.jsonObj.name}</h3>`;
+
+        chartData.labels.push(page.jsonObj.name);
+
+        //for the current page calculate number of correctanswers
+        var correctAnswerCount = 0;
+        var possibleCorrectAnswerCount = 0;
+        for (let j = 0; j < page.elements.length; j++) {
+            const question = page.elements[j];
+            //if question has a correct answer
+            if (question.correctAnswer) {
+                possibleCorrectAnswerCount++;
+
+                if (question.isAnswerCorrect()) {
+                    correctAnswerCount++;
+                }
+            }
+        }
+
+        if (possibleCorrectAnswerCount == 0) {
+            //if there are no correct answers, then set the correct answer count to the number of questions
+            //possibleCorrectAnswerCount = page.elements.length;
+
+            chartData.datasets[0].data.push(100);
+        }
+        else {
+            //calculate percentage of correct answers for the question
+            const correctAnswerPercent = Math.round((correctAnswerCount / possibleCorrectAnswerCount) * 100);
+            chartData.datasets[0].data.push(correctAnswerPercent);
+        }
         //loop through all questions in the page
         for (let j = 0; j < page.elements.length; j++) {
 
@@ -44,7 +88,6 @@ function generateResultsHTML(surveyModel) {
         results += "</div>";
     }
     surveyModel.completedHtml = results;
-
 }
 
 function resetSurvey(surveyModel) {
@@ -92,14 +135,13 @@ function calculateScoreText(surveyModel) {
     return `<img src='${scoreImg}' alt="${scorePercent}%"/> Your rating is <span title='${scorePercent}%'>${scoreText}</span>`;
 }
 
-var survey;
 
 // read querystring param assessment
 const urlParams = new URLSearchParams(window.location.search);
 var assessmentName = urlParams.get('assessment');
 assessmentName = assessmentName || "emu"; //default to emu
 
-var json = {};
+
 
 $.getJSON({
     url: assessmentName + "/survey.json",
@@ -151,6 +193,10 @@ function setupSurveyFromJson(json) {
 
     survey.onComplete.add((sender, options) => {
         console.log(JSON.stringify(sender.data, null, 3));
+
+        //after a delay, generate the chart
+        setTimeout(generateChart(), 2000);
+
         $("#btnReset").show();
         $("#btnExport").show();
     });
@@ -203,4 +249,33 @@ function exportSurvey() {
     document.body.removeChild(link);
 
 
+}
+
+
+function generateChart() {
+    var ctx = document.getElementById("myChart");
+
+    //return if ctx is null or undefined
+    if (!ctx) return;
+
+    var options = {
+        tooltips: {
+            mode: 'label'
+        },
+        layout: {
+            padding: 20
+        },
+        scales: {
+            // yAxes: [{
+            //     ticks: {
+            //         beginAtZero: true
+            //     }
+            // }]
+        }
+    };
+    var myRadarChart = new Chart(ctx, {
+        type: 'radar',
+        data: chartData,
+        options: options
+    });
 }

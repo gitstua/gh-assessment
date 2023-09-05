@@ -118,3 +118,15 @@ footer{
 footer a{
     color:#F7F7F7;
 }
+
+#myChart{
+    background-color: white;
+
+}
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 50vh;
+    width: 50vh;
+  }
