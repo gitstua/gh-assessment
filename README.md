@@ -10,6 +10,9 @@ A live demo of the GitHub Enterprise Cloud  assessment is available at [stuarteg
   
 The questions for the survey are based on a [list](https://gist.github.com/gitstua/0bd15c1c6e87e947010906bacc749376) I put together for a customer using GitHub Enterprise Cloud EMU to consider to improve security and management.
 
+### A GitHub Actions Assessment
+A demo of the content provided by @yuhattor is located at [stuarteggerton.com/gh-assessment/?assessment=actions](https://stuarteggerton.com/gh-assessment/?assessment=actions)
+
 ### Quiz on GitHub Foundations
 A quiz for foundational knowledge about GitHub is available at [stuarteggerton.com/gh-assessment/?assessment=quiz-foundations](https://stuarteggerton.com/gh-assessment/?assessment=quiz-foundations)
 

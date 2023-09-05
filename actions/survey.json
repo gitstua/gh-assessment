@@ -1,0 +1,12 @@
+{
+    "title": "GitHub Actions Assessment",
+    "description": "An unofficial GitHub Actions Assessment - content by @yuhattor",
+    "logoPosition": "right",
+    "progressBarType": "questions",
+    "showProgressBar": "top",
+    "goNextPageAutomatic": true,
+    "widthMode": "responsive",
+    "showTOC": true,
+    "tocLocation": "left",
+    "showPrevButton": true
+}
