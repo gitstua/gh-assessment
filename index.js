@@ -177,12 +177,18 @@ function exportSurvey() {
 
     var csv = Papa.unparse(questionsList);
 
+    //generate filename based on date yyyy-mm-dd and time hh-mm-ss
+    var d = new Date();
+    var date = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+    var time = d.getHours() + "-" + d.getMinutes() + "-" + d.getSeconds();
+    var fileName = survey.title +  "-" + date + "-" + time + ".csv";
+
     //return the csv to the user via the browser
     var blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     var link = document.createElement("a");
     var url = URL.createObjectURL(blob);
     link.setAttribute("href", url);
-    link.setAttribute("download", "questions.csv");
+    link.setAttribute("download", fileName);
     link.style.visibility = 'hidden';
     document.body.appendChild(link);
     link.click();
