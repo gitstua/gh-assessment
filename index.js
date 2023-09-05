@@ -195,7 +195,10 @@ function setupSurveyFromJson(json) {
         console.log(JSON.stringify(sender.data, null, 3));
 
         //after a delay, generate the chart
-        setTimeout(generateChart(), 2000);
+        setTimeout(function () {generateChart()}, 500);
+
+        //after a delay, scroll to top
+        setTimeout(function () {window.scrollTo(0, 0);}, 1000);
 
         $("#btnReset").show();
         $("#btnExport").show();
