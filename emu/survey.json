@@ -1,6 +1,6 @@
 {
     "title": "GitHub Enterprise Well-Architected Review",
-    "description": "An unofficial well architected survey for GitHub Enterprise",
+    "description": "An unofficial Well-Architected survey for GitHub Enterprise",
     "logoPosition": "right",
     "progressBarType": "questions",
     "showProgressBar": "top",
