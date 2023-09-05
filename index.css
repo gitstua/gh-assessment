@@ -38,8 +38,7 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
 
 .wrong-answer::after {
     content: '⚠️ Review this topic';
-    /* color: red; */
-    margin-right: 10px;
+    margin-right: 25px;
     float: right
 }
 
@@ -59,6 +58,8 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
     float: left;
     clear: left;
     text-align: left;
+
+    width: 100%;
 }
 
 .question-details a {
@@ -66,7 +67,12 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
     display: block;
     margin-left: 0px;
     font-weight: bolder;
+}
 
+.page-details h3{
+    text-align: left;
+    color: white;
+    background-color: black;
 }
 
 .sd-question__header--location--left {

@@ -2,6 +2,8 @@ function generateResultsHTML(surveyModel) {
     // get the data from survey
     // const results = JSON.stringify(surveyModel.data);
 
+
+
     var results = "";
     //get all questions
     const questions = surveyModel.getAllQuestions();
@@ -9,32 +11,38 @@ function generateResultsHTML(surveyModel) {
     //add score text
     results = `<div class='score-text'>${calculateScoreText(surveyModel)}</div>`;
 
-    //loop through all questions and get the question text and the question answer plus description
-    for (let i = 0; i < questions.length; i++) {
-        const question = questions[i];
-        const questionNumber = i + 1;
-        const questionText = question.fullTitle;
-        const questionAnswer = question.displayValue;
-        const questionComment = question.comment;
-        const helpURL = question.jsonObj.helpURL;
-        const helpURLTitle = question.jsonObj.helpURLTitle || "More Info";
+    //loop through pages and get the questions
+    for (let i = 0; i < surveyModel.pages.length; i++) {
+        const page = surveyModel.pages[i];
+        results += `<div class='page-details'><h3>${page.jsonObj.name}</h3>`;
+        //loop through all questions in the page
+        for (let j = 0; j < page.elements.length; j++) {
 
-        var questionDetails = "";
+            const question = page.elements[j];
+            const questionNumber = question.no;
+            const questionText = question.fullTitle;
+            const questionAnswer = question.displayValue;
+            const questionComment = question.comment;
+            const helpURL = question.jsonObj.helpURL;
+            const helpURLTitle = question.jsonObj.helpURLTitle || "More Info";
 
-        const questionClass = question.isAnswerCorrect() ? "correct-answer" : "wrong-answer";
+            var questionDetails = "";
 
-        //add the question text and answer to the results
-        questionDetails += `<div class='question-details ${questionClass}'>${questionNumber}. ${questionText}: ${questionAnswer}`;
-        if (questionComment && questionComment.length > 0)
-            questionDetails += `, ${questionComment}`;
-        if (helpURL && helpURL.length > 0)
-            questionDetails += `<a href=${helpURL} target='_blank'>${helpURLTitle}</a>`;
+            const questionClass = question.isAnswerCorrect() ? "correct-answer" : "wrong-answer";
 
-        questionDetails += "</div>";
+            //add the question text and answer to the results
+            questionDetails += `<div class='question-details ${questionClass}'>${questionNumber} ${questionText}: ${questionAnswer}`;
+            if (questionComment && questionComment.length > 0)
+                questionDetails += `, ${questionComment}`;
+            if (helpURL && helpURL.length > 0)
+                questionDetails += `<a href=${helpURL} target='_blank'>${helpURLTitle}</a>`;
 
-        results += questionDetails;
+            questionDetails += "</div>";
+
+            results += questionDetails;
+        }
+        results += "</div>";
     }
-
     surveyModel.completedHtml = results;
 
 }
@@ -144,7 +152,7 @@ function setupSurveyFromJson(json) {
     survey.onComplete.add((sender, options) => {
         console.log(JSON.stringify(sender.data, null, 3));
         $("#btnReset").show();
-        $("#btnExport").show(); 
+        $("#btnExport").show();
     });
 
     //reset answers
@@ -181,7 +189,7 @@ function exportSurvey() {
     var d = new Date();
     var date = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
     var time = d.getHours() + "-" + d.getMinutes() + "-" + d.getSeconds();
-    var fileName = survey.title +  "-" + date + "-" + time + ".csv";
+    var fileName = survey.title + "-" + date + "-" + time + ".csv";
 
     //return the csv to the user via the browser
     var blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
@@ -194,5 +202,5 @@ function exportSurvey() {
     link.click();
     document.body.removeChild(link);
 
-    
+
 }
