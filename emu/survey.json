@@ -1,6 +1,6 @@
 {
-    "title": "GitHub Enterprise EMU Health Assessment",
-    "description": "An unofficial health assessment for GitHub Enterprise",
+    "title": "GitHub Enterprise EMU Well-Architected Review",
+    "description": "An unofficial well architected survey for GitHub Enterprise",
     "logoPosition": "right",
     "progressBarType": "questions",
     "showProgressBar": "top",

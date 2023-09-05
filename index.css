@@ -9,7 +9,7 @@
 
 html {
     font-family: 'Mona Sans' !important;
-    color: azure;
+    /* color: azure; */
     background-color: rgb(15, 16, 16);
 }
 
@@ -58,6 +58,7 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
     display: block;
     float: left;
     clear: left;
+    text-align: left;
 }
 
 .question-details a {
@@ -67,8 +68,6 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
     font-weight: bolder;
 
 }
-
-;
 
 .sd-question__header--location--left {
     width: 50% !important;
@@ -103,4 +102,12 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
     width: 50%;
 
     border-radius: 25px;
+}
+
+footer{
+    color:#F7F7F7
+}
+
+footer a{
+    color:#F7F7F7;
 }
