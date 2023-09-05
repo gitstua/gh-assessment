@@ -45,4 +45,5 @@ No content leaves your browser.
 ## Thanks
  - [SurveyJS](https://github.com/surveyjs/survey-library) for the survey framework
  - [Papa Parse](https://www.papaparse.com/) for the CSV to JSON conversion end CSV export
+ - [ChartJS](https://www.chartjs.org/docs/latest/) for the graphing
  - GitHub Copilot helped with some of the code and this readme 😍
