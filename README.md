@@ -5,10 +5,10 @@ These are not an official GitHub assessments and is not endorsed by GitHub.
 
 ## Live demos
 
-### EMU Assessment
-A live demo of the GitHub Enterprise Cloud EMU assessment is available at [stuarteggerton.com/gh-assessment](https://stuarteggerton.com/gh-assessment)  - helps you understand if you have considered some key points when configuring GitHub.
+### GitHub Enterprise Cloud Assessment
+A live demo of the GitHub Enterprise Cloud  assessment is available at [stuarteggerton.com/gh-assessment](https://stuarteggerton.com/gh-assessment)  - helps you understand if you have considered some key points when configuring GitHub.
   
-The questions for the EMU survey are based on a [list](https://gist.github.com/gitstua/0bd15c1c6e87e947010906bacc749376) I put together for a customer using GitHub Enterprise Cloud EMU to consider to improve security and management.
+The questions for the survey are based on a [list](https://gist.github.com/gitstua/0bd15c1c6e87e947010906bacc749376) I put together for a customer using GitHub Enterprise Cloud EMU to consider to improve security and management.
 
 ### Quiz on GitHub Foundations
 A quiz for foundational knowledge about GitHub is available at [stuarteggerton.com/gh-assessment/?assessment=quiz-foundations](https://stuarteggerton.com/gh-assessment/?assessment=quiz-foundations)
@@ -44,4 +44,5 @@ No content leaves your browser.
 
 ## Thanks
  - [SurveyJS](https://github.com/surveyjs/survey-library) for the survey framework
- - [Papa Parse](https://www.papaparse.com/) for the CSV to JSON conversion
+ - [Papa Parse](https://www.papaparse.com/) for the CSV to JSON conversion end CSV export
+ - GitHub Copilot helped with some of the code and this readme 😍
