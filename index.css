@@ -73,6 +73,7 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
     text-align: left;
     color: white;
     background-color: black;
+    padding-left: 10px;
 }
 
 .sd-question__header--location--left {
