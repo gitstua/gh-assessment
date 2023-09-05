@@ -22,7 +22,7 @@ function generateResultsHTML(surveyModel) {
         var questionDetails = "";
 
         const questionClass = question.isAnswerCorrect() ? "correct-answer" : "wrong-answer";
-        
+
         //add the question text and answer to the results
         questionDetails += `<div class='question-details ${questionClass}'>${questionNumber}. ${questionText}: ${questionAnswer}`;
         if (questionComment && questionComment.length > 0)
@@ -40,7 +40,7 @@ function generateResultsHTML(surveyModel) {
 }
 
 function resetSurvey(surveyModel) {
-    if (confirm('This will reset the survey and you will lose all answers. Are you sure?')){
+    if (confirm('This will reset the survey and you will lose all answers. Are you sure?')) {
         location.reload();
     }
 }
@@ -50,7 +50,7 @@ function calculateScoreText(surveyModel) {
 
     var score = 0;
     //because some questions do not have an answer, we need to calculate the max score 
-    var maxScore = surveyModel.getCorrectAnswerCount() + surveyModel.getInCorrectAnswerCount(); 
+    var maxScore = surveyModel.getCorrectAnswerCount() + surveyModel.getInCorrectAnswerCount();
     var scoreText = "";
 
     for (let i = 0; i < questions.length; i++) {
@@ -98,11 +98,11 @@ $.getJSON({
     success: function (result) {
         json = result;
 
-//  check if pages are defined in the json and have more than 0
-        if (json.pages && json.pages.length > 0){
+        //  check if pages are defined in the json and have more than 0
+        if (json.pages && json.pages.length > 0) {
             setupSurveyFromJson(json);
         }
-        else{
+        else {
 
             Papa.parse(assessmentName + '/questions.csv', {
                 download: true,
@@ -144,13 +144,14 @@ function setupSurveyFromJson(json) {
     survey.onComplete.add((sender, options) => {
         console.log(JSON.stringify(sender.data, null, 3));
         $("#btnReset").show();
+        $("#btnExport").show(); 
     });
 
     //reset answers
     survey.data = {};
 
     survey.onValidateQuestion.add((survey, options) => {
-        if (survey.completedHtmlOnCondition.length == 0){
+        if (survey.completedHtmlOnCondition.length == 0) {
             generateResultsHTML(survey);
         }
     });
@@ -158,3 +159,34 @@ function setupSurveyFromJson(json) {
     $("#surveyElement").Survey({ model: survey });
 }
 
+function exportSurvey() {
+    // export the survey to csv
+
+    //get all questions
+    const questions = survey.getAllQuestions();
+
+    //build a new list of value of jsonObj in each question
+    var questionsList = [];
+    for (let i = 0; i < questions.length; i++) {
+        const question = questions[i];
+        obj = question.jsonObj;
+        // obj.isAnswerCorrect = question.isAnswerCorrect();
+        obj.answer = question.displayValue;
+        questionsList.push(question.jsonObj);
+    }
+
+    var csv = Papa.unparse(questionsList);
+
+    //return the csv to the user via the browser
+    var blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    var link = document.createElement("a");
+    var url = URL.createObjectURL(blob);
+    link.setAttribute("href", url);
+    link.setAttribute("download", "questions.csv");
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    
+}
