@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "grapecity.gc-excelviewer"
+        "grapecity.gc-excelviewer",
+        "ritwickdey.liveserver"
     ]
 }
