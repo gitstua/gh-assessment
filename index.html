@@ -7,41 +7,48 @@
 </head>
 
 <body>
-<div class="welcome">
-    <h1>Welcome to GH Well-Architected (unofficial)</h1>
-    <p>GH Well-Architected is a set of assessments to prompt discussions around configuring secure, high-performing, resilient, and efficient
-         GitHub.</p>
+    <div class="welcome">
+        <h1>Welcome to GH Well-Architected (unofficial)</h1>
+        <p>GH Well-Architected is a set of assessments to prompt discussions around configuring secure, high-performing,
+            resilient, and efficient
+            GitHub.</p>
 
-    <p>Please check out our assessments:
-    <ul>
-        <li><a href="survey.html?assessment=emu">GitHub Well-Architected - High Level</a></li>
-        <li><a href="survey.html?assessment=actions">GitHub Well-Architected - Actions</a></li>
-    </ul>
-    </p>
-    <p>Learn more about <a href="https://github.com/github/gh-assessment">GH Well-Architected</a></p>
-    <p>GH Well-Architected is intended to become an open-source project. You can find the code on <a href="
+        <h2>Assessments</h2>
+        <p>Please check out our assessments:
+        <ul>
+            <li><a href="survey.html?assessment=emu">GitHub Well-Architected - High Level</a></li>
+            <li><a href="survey.html?assessment=actions">GitHub Well-Architected - Actions</a></li>
+        </ul>
+        </p>
+        <p>Learn more about <a href="https://github.com/github/gh-assessment">GH Well-Architected</a></p>
+        <p>GH Well-Architected is intended to become an open-source project. You can find the code on <a href="
 
         <a href=" https://stuarteggerton.com/gh-assessment/?assessment=emu">Assessment</a> to get started.</p>
 
-        <h2>Important</h2>
-    <p>GH Well-Architected is not an official GitHub product. It is a community project, created by Stu Eggerton, a GitHub Solutions Architect.</p>
-    <p>The content generated from this website does not have any warranty. Use at own risk.</p>
+        <h2>Other uses for this codebase</h2>
+        <p>You can also find a basic <a href=" https://stuarteggerton.com/gh-assessment/?assessment=quiz-fundamentals">quiz</a> to help practice the fundamentals of GitHub</p>
+
+        <h2>⚠️ Important</h2>
+        <p>GH Well-Architected is not an official GitHub product. It is a community project, created by Stu Eggerton, a
+            GitHub Solution Architect.</p>
+        <p>The content generated from this website does not have any warranty. Use at own risk.</p>
 
     </div>
-<footer>
-    <p>Created with ❤️ by Stu Eggerton - <a href='https://github.com/gitstua/gh-assessment/'>github.com/gitstua/gh-assessment</a></p>
-</footer>
+    <footer>
+        <p>Created with ❤️ by Stu Eggerton - <a
+                href='https://github.com/gitstua/gh-assessment/'>github.com/gitstua/gh-assessment</a></p>
+    </footer>
 
-<script>
-    // if the querysting has a value for assessment then forward to survey.html and pass the query string
-    // otherwise, show the welcome page
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const assessment = urlParams.get('assessment')
-    if (assessment) {
-        window.location.href = "survey.html" + queryString;
-    }
-</script>
+    <script>
+        // if the querysting has a value for assessment then forward to survey.html and pass the query string
+        // otherwise, show the welcome page
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const assessment = urlParams.get('assessment')
+        if (assessment) {
+            window.location.href = "survey.html" + queryString;
+        }
+    </script>
 </body>
 
 </html>
