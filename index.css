@@ -154,3 +154,16 @@ footer a{
     background-color:white;
     font-size: large;
   }
+
+  .welcome-important{
+    margin-left: 70px;
+    margin-right: 70px;
+    border: 1px solid lightgray;
+    padding:10px;
+  }
+
+  .faq{
+    margin-bottom: 100px;
+    padding-left: 10px;
+    line-height: 1em;
+  }
