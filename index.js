@@ -14,7 +14,7 @@ function generateResultsHTML(surveyModel) {
         labels: [],
         datasets: [
             {
-                label: "Your results (closer to the edge is better)",
+                // label: "Your results (closer to the edge is better)",
                 backgroundColor: "rgba(179,181,198,0.2)",
                 borderColor: "rgba(179,181,198,1)",
                 pointBackgroundColor: "rgba(179,181,198,1)",
@@ -268,12 +268,13 @@ function generateChart() {
         layout: {
             padding: 20
         },
-        scales: {
-            // yAxes: [{
-            //     ticks: {
-            //         beginAtZero: true
-            //     }
-            // }]
+        plugins: {
+            legend: {
+                display: false,
+                labels: {
+                    color: 'rgb(255, 99, 132)'
+                }
+            }
         }
     };
     var myRadarChart = new Chart(ctx, {
