@@ -1,23 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-  <title>GitHub Enterprise Health Assessment</title>
-  <head>
-    <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
-    <script src="https://unpkg.com/survey-jquery@1.9.104/survey.jquery.min.js"></script>
-    <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/survey-jquery@1.9.104/defaultV2.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
-    <link rel="stylesheet" href ="./index.css" />
-  </head>
-  <body>
-    <div id="surveyElement"></div>
-    <footer>
-      <p>Created with ❤️ by Stu Eggerton - <a href='https://github.com/gitstua/gh-assessment/'>github.com/gitstua/gh-assessment</a></p>
-    </footer>
-    <script src="./theme.js"></script>
-    <script src="./index.js"></script>
+<html class="welcome">
 
-    <button id="btnReset" style="display:none;" class="sd-btn sd-btn--action sd-navigation__complete-btn" onclick="resetSurvey()">Reset</button>
-    <button id="btnExport" style="display:none;" class="sd-btn sd-btn--action sd-navigation__complete-btn" onclick="exportSurvey()">Export to CSV</button>
-  </body>
+<head>
+    <title>Welcome to GitHub Well-Architected</title>
+    <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+<div class="welcome">
+    <h1>Welcome to GH Well-Architected (unofficial)</h1>
+    <p>GH Well-Architected is a set of assessments to prompt discussions around configuring secure, high-performing, resilient, and efficient
+         GitHub.</p>
+
+    <p>Please check out our assessments:
+    <ul>
+        <li><a href="survey.html?assessment=emu">GitHub Well-Architected - High Level</a></li>
+        <li><a href="survey.html?assessment=actions">GitHub Well-Architected - Actions</a></li>
+    </ul>
+    </p>
+    <p>Learn more about <a href="https://github.com/github/gh-assessment">GH Well-Architected</a></p>
+    <p>GH Well-Architected is intended to become an open-source project. You can find the code on <a href="
+
+        <a href=" https://stuarteggerton.com/gh-assessment/?assessment=emu">Assessment</a> to get started.</p>
+
+        <h2>Important</h2>
+    <p>GH Well-Architected is not an official GitHub product. It is a community project, created by Stu Eggerton, a GitHub Solutions Architect.</p>
+    <p>The content generated from this website does not have any warranty. Use at own risk.</p>
+
+    </div>
+<footer>
+    <p>Created with ❤️ by Stu Eggerton - <a href='https://github.com/gitstua/gh-assessment/'>github.com/gitstua/gh-assessment</a></p>
+</footer>
+
+<script>
+    // if the querysting has a value for assessment then forward to survey.html and pass the query string
+    // otherwise, show the welcome page
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const assessment = urlParams.get('assessment')
+    if (assessment) {
+        window.location.href = "survey.html" + queryString;
+    }
+</script>
+</body>
+
 </html>
