@@ -1,6 +1,6 @@
 {
     "recommendations": [
-        "grapecity.gc-excelviewer",
-        "ritwickdey.liveserver"
+        "ritwickdey.liveserver",
+        "janisdd.vscode-edit-csv"
     ]
 }

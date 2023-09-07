@@ -1,0 +1,192 @@
+{
+    "title": "Tell us about your Actions usage",
+    "logoPosition": "right",
+    "completedHtml": "<h4>You got <b>{correctAnswers}</b> out of <b>{questionCount}</b> correct answers.</h4>",
+    "completedHtmlOnCondition": [
+     {
+      "expression": "{correctAnswers} == 0",
+      "html": "<h4>Unfortunately, none of your answers is correct. Please try again.</h4>"
+     },
+     {
+      "expression": "{correctAnswers} == {questionCount}",
+      "html": "<h4>Congratulations! You answered all the questions correctly!</h4>"
+     }
+    ],
+    "pages": [
+     {
+      "name": "startPage",
+      "elements": [
+       {
+        "type": "html",
+        "name": "welcomeMsg",
+        "html": "<b>Take this quiz to find out how well you know the foundations of GitHub.</b></br></br><i>Good luck!</i></br><img src=' https://octodex.github.com/images/hula_loop_octodex03.gif' width='60%' height='auto' style='border-radius: 25px;'></img>\n"
+       }
+      ]
+     },
+     {
+      "name": "page2",
+      "elements": [
+       {
+        "type": "checkbox",
+        "name": "q1",
+        "title": "How are you using Actions?",
+        "correctAnswer": [
+         "Organization"
+        ],
+        "choices": [
+         {
+          "value": "Organization",
+          "text": "Self-hosted runners"
+         },
+         {
+          "value": "Repository",
+          "text": "GitHub Hosted"
+         },
+         {
+          "value": "Enterprise",
+          "text": "GitHub Hosted - Larger Runners"
+         }
+        ],
+        "choicesOrder": "random"
+       },
+       {
+        "type": "radiogroup",
+        "name": "2fa",
+        "visibleIf": "{q1} allof ['Organization']",
+        "title": "How are you running the self-hosted",
+        "description": "example: https://example.com",
+        "correctAnswer": "Phone call",
+        "choices": [
+         {
+          "value": "TOTP",
+          "text": "Azure"
+         },
+         {
+          "value": "Phone call",
+          "text": "AWS"
+         },
+         {
+          "value": "SMS",
+          "text": "GCP"
+         }
+        ],
+        "choicesOrder": "random"
+       },
+       {
+        "type": "radiogroup",
+        "name": "question4",
+        "title": "GIT can best be described as..",
+        "correctAnswer": "option1",
+        "choices": [
+         {
+          "value": "option1",
+          "text": "A distributed version control system (DVCS)"
+         },
+         {
+          "value": "option2",
+          "text": "A client server source code system"
+         },
+         {
+          "value": "option3",
+          "text": "The best place to store large video files together with your source code"
+         }
+        ],
+        "choicesOrder": "random"
+       },
+       {
+        "type": "radiogroup",
+        "name": "question1",
+        "title": "Replicating users from your identity provider is made possible by...",
+        "correctAnswer": "Item 1",
+        "choices": [
+         {
+          "value": "Item 1",
+          "text": "SCIM"
+         },
+         {
+          "value": "Item 2",
+          "text": "Integration Identity Replication"
+         },
+         {
+          "value": "Item 3",
+          "text": "CRON jobs"
+         }
+        ],
+        "choicesOrder": "random"
+       },
+       {
+        "type": "checkbox",
+        "name": "question2",
+        "title": "Select 3 ways a user can authenticate to GitHub",
+        "correctAnswer": [
+         "Item 1",
+         "Item 2",
+         "Item 3"
+        ],
+        "choices": [
+         {
+          "value": "Item 1",
+          "text": "PAT Token"
+         },
+         {
+          "value": "Item 2",
+          "text": "SSH"
+         },
+         {
+          "value": "Item 3",
+          "text": "Deploy keys"
+         },
+         {
+          "value": "Item 4",
+          "text": "Magic link to email"
+         }
+        ],
+        "choicesOrder": "random"
+       },
+       {
+        "type": "checkbox",
+        "name": "question3",
+        "title": "A repository can have these visibilities. (Choose 3)",
+        "correctAnswer": [
+         "Item 1",
+         "Item 2",
+         "Item 3"
+        ],
+        "choices": [
+         {
+          "value": "Item 1",
+          "text": "Public"
+         },
+         {
+          "value": "Item 2",
+          "text": "Private"
+         },
+         {
+          "value": "Item 3",
+          "text": "Internal"
+         },
+         {
+          "value": "Item 4",
+          "text": "Secure"
+         }
+        ],
+        "choicesOrder": "random"
+       }
+      ]
+     }
+    ],
+    "navigateToUrlOnCondition": [
+     {
+      "expression": "{q1} allof ['Organization']",
+      "url": "https://example.com"
+     }
+    ],
+    "showProgressBar": "bottom",
+    "progressBarType": "questions",
+    "goNextPageAutomatic": true,
+    "startSurveyText": "Start Quiz",
+    "firstPageIsStarted": true,
+    "questionsOnPageMode": "questionPerPage",
+    "maxTimeToFinish": 300,
+    "showTimerPanel": "top"
+   }

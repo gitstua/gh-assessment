@@ -50,3 +50,4 @@ No content leaves your browser.
  - [Papa Parse](https://www.papaparse.com/) for the CSV to JSON conversion end CSV export
  - [ChartJS](https://www.chartjs.org/docs/latest/) for the graphing
  - GitHub Copilot helped with some of the code and this readme 😍
+ - [Edit CSV](https://marketplace.visualstudio.com/items?itemName=janisdd.vscode-edit-csv) VS Code extension to edit CSV and add quote delimiters to the `questions.csv``
