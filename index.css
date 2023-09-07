@@ -69,7 +69,7 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
     font-weight: bolder;
 }
 
-.page-details h3{
+.page-details h3 {
     text-align: left;
     color: white;
     background-color: black;
@@ -111,8 +111,8 @@ html body div#surveyElement div.sd-root-modern.sd-root--compact form div.sd-cont
     border-radius: 25px;
 }
 
-footer{
-    color:#F7F7F7;
+footer {
+    color: #F7F7F7;
     background-color: #1C1C1C;
     float: bottom;
     position: relative;
@@ -130,15 +130,15 @@ footer{
     padding-left: 10px;
 }
 
-.welcome footer{
+.welcome footer {
     position: fixed;
 }
 
-footer a{
-    color:#F7F7F7;
+footer a {
+    color: #F7F7F7;
 }
 
-#myChart{
+#myChart {
     background-color: white;
 
 }
@@ -148,22 +148,37 @@ footer a{
     margin: auto;
     height: 60vh;
     width: 60vh;
-  }
+}
 
-  .welcome{
-    background-color:white;
+.welcome {
+    background-color: white;
     font-size: large;
-  }
+    margin-left: 20px;
+}
 
-  .welcome-important{
+.welcome p{
+    margin-left: 20px;
+}
+
+.welcome-important {
     margin-left: 70px;
     margin-right: 70px;
     border: 1px solid lightgray;
-    padding:10px;
-  }
+    padding: 10px;
+}
 
-  .faq{
+.welcome-important h2 {
+    margin-top: 0px;
+}
+
+h2 {
+    margin-top: 40px;
+    margin-left: 0;
+
+}
+
+.faq {
     margin-bottom: 100px;
     padding-left: 10px;
     line-height: 1em;
-  }
+}
