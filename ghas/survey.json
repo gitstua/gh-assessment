@@ -1,0 +1,12 @@
+{
+    "title": "GitHub Enterprise Well-Architected Review - GitHub Advanced Security",
+    "description": "An unofficial Well-Architected survey for GitHub Enterprise GHAS",
+    "logoPosition": "right",
+    "progressBarType": "questions",
+    "showProgressBar": "top",
+    "goNextPageAutomatic": true,
+    "widthMode": "responsive",
+    "showTOC": true,
+    "tocLocation": "left",
+    "showPrevButton": true
+}
